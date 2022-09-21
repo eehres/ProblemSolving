@@ -1,4 +1,5 @@
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
  
 public class Main {
 	public static void main(String[] args) {
@@ -12,15 +13,7 @@ public class Main {
 			arr[i] = sc.nextInt();
 		}
 
-		for(int i = 0; i < N - 1; i++) {
-			for(int j = i + 1; j < N; j++) {
-				if(arr[i] > arr[j]) {
-					int temp = arr[j];
-					arr[j] = arr[i];
-					arr[i] = temp;
-				}
-			}
-		}
+        Arrays.sort(arr);
 		
 		for(int val : arr) {
 			System.out.println(val);
