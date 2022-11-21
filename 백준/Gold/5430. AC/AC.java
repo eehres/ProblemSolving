@@ -13,27 +13,24 @@ public class Main {
             String answer = "";
             int n = Integer.parseInt(br.readLine());
             StringTokenizer st = new StringTokenizer(br.readLine(),"[],");
-            ArrayDeque<Integer>deque = new ArrayDeque<>();
+            ArrayDeque<String>deque = new ArrayDeque<>();
             for(int i = 0 ; i < n ; i++){
-                deque.add(Integer.parseInt(st.nextToken()));
+                deque.add(st.nextToken());
             }
             boolean right = true;
             for(int i = 0 ; i < AC.length() ; i++){
-                if(AC.charAt(i) == 'R') {
+                if(AC.charAt(i)=='R'){
                     right = !right;
-                    continue;
                 }else if(AC.charAt(i)=='D'){
-                    if(right) {
-                        if(deque.pollFirst() == null) {
-                            answer = "error";
-                            break;
+                    if(!deque.isEmpty()) {
+                        if(right){
+                            deque.pollFirst();
+                        }else{
+                            deque.pollLast();
                         }
-                    }
-                    else {
-                        if(deque.pollLast() == null) {
-                            answer = "error";
-                            break;
-                        }
+                    }else if(deque.isEmpty()){
+                        answer = "error";
+                        break;
                     }
                 }
             }
@@ -60,7 +57,7 @@ public class Main {
             T--;
         }
 
-        System.out.println(sb+"\n");
+        System.out.println(sb);
 
         }
     }
