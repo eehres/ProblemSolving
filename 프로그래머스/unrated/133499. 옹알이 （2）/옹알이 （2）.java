@@ -10,7 +10,7 @@ class Solution {
                 babbling[i]=babbling[i].replace(str[j],"1");
             }
         }
-            if(babbling[i].matches("^[0-9]*$")){
+            if(babbling[i].matches("^[1]*$")){
                 answer++;
             }
         }
