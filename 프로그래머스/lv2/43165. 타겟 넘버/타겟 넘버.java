@@ -4,7 +4,6 @@ class Solution {
         dfs(numbers,target,0,0);
         return answer;
     }
-    
     public void dfs(int[] numbers, int target, int idx, int sum){
         if(idx == numbers.length){
             if(sum == target) answer++; 
